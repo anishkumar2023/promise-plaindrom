@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+   <head>
+       <title>
+          promise
+       </title>
+   </head>
+   <body >
+   </body>
+       <script>
+            <!-- paleindrom -->
+let number=parseInt(prompt("Enter the number to find amstron or not"))
+function check(n){
+let a=n
+let b=0
+while(a!=0){
+    let rem=a%10
+    a=(a-rem)/10
+    b=(b*10)+rem
+}
+ return new Promise((re,rj)=>{
+     if(n===b){
+         re(n)
+     }
+     else{
+         rj(n)
+     }
+ })
+
+
+}
+check(number).then((x)=>{
+    document.write(`${x} is paleindrom`)
+})
+.catch((y)=>{
+    document.write(`${y} is not a paleindrom`)
+})
+
+</script>
+</html>
